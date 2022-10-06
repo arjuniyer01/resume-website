@@ -22,7 +22,6 @@
                 "url": "https://github.com/arjuniyer01/resume-website/raw/main/images/uw-amazon-shopbop.png"
             },
             "start_date": {"year": "2022", "month": "8"},
-            "end_date": {"year": "2022", "month": "12"},
             "text": {
                 "headline": "Student Software Engineer",
                 "text": "<p>Working with Amazon-Shopbop on a research project through UW Capstone Course</p>"
@@ -33,7 +32,6 @@
                 "url": "https://github.com/arjuniyer01/resume-website/raw/main/images/gdsc.png"
             },
             "start_date": {"year": "2022", "month": "8"},
-            "end_date": {"year": "2023", "month": "5"},
             "text": {
                 "headline": "Senior Consultant",
                 "text": "<p>Google DSC UW-Madison</p>"

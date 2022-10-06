@@ -1,3 +1,4 @@
+from turtle import color
 import streamlit as st
 from constant_values import *
 
@@ -24,16 +25,18 @@ st.sidebar.download_button("Download PDF Resume", pdfFileObj, file_name="iyer_re
 
 st.markdown("## :email: iyer9@wisc.edu &emsp;&emsp; :phone: 608-622-4320")
 
-def hello():
-    print("Hello World")
 
 with st.spinner(text="Building line"):
     with open("timeline.json", "r") as f:
         data = f.read()
         timeline(data, height=500,)
 
+
+st.markdown("# Interactive Project Viewer :computer:")
+st.markdown("#### Click on the chart to view my work in a language!")
+
 option = {
-    "title": {"text": "Languages"},
+    "click": "function(params) { console.log(params.name) }",
     "toolbox": {
         "show": True,
         "feature": {
@@ -59,6 +62,21 @@ option = {
         }
     ],
 }
-st_echarts(
-    options=option, height="600px",
+clicked_label = st_echarts(
+    options=option, 
+    height="600px",
+    events={"click": "function(params) { return params.name }"},
 )
+
+if clicked_label:
+    if clicked_label == "Python":
+        st.markdown(repository_md_strings['Pneumonia_Detector'])
+        st.markdown(repository_md_strings['resume-website'])
+    if clicked_label == "C":
+        st.markdown(repository_md_strings['neural-network-from-scratch'])
+        st.markdown(repository_md_strings['Memory_Allocator'])
+    if clicked_label == "Java":
+        st.markdown(repository_md_strings['WikipediaTermSearch'])
+        st.markdown(repository_md_strings['BestFlight'])
+    if clicked_label == "R":
+        st.markdown(repository_md_strings['Instant_Body_Fat'])
