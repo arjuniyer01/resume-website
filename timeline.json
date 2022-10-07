@@ -1,8 +1,11 @@
 {
     "title": {
+        "media": {
+            "url": "https://github.com/arjuniyer01/resume-website/raw/main/images/combined.png"
+        },
         "text": {
           "headline": "Career Overview Timeline",
-          "text": "<p>Proceed by clicking the arrow or scrolling through the timeline.</p>"
+          "text": "<p>Proceed by clicking the arrow or scrolling through the timeline and clicking on the experience.</p>"
         }
     },
 
