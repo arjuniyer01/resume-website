@@ -7,7 +7,14 @@ import base64
 
 st.set_page_config(page_title="Arjun Iyer's Resume", layout="wide", page_icon=":smile:")
 
-st.markdown(page_setup, unsafe_allow_html=True)
+st.markdown(f'''
+    <style>
+        section[data-testid="stSidebar"] .css-ng1t4o {{width: 25rem;}}
+        section[data-testid="stSidebar"] .css-1d391kg {{width: 25rem;}}
+        div.stDownloadButton > button:first-child {{background-color: #000000; color:#FFFFFF; border-radius: 10px; padding: 10px; font-weight: bold;}}  
+        div.stDownloadButton > button:hover {{border-width: thick;}}
+    </style>
+''', unsafe_allow_html=True)
 
 with st.sidebar:
     components.html(embed_component["linkedin"], height=300)
