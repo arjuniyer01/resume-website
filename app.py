@@ -37,7 +37,7 @@ with st.spinner(text="Building line"):
 
 st.markdown("# Interactive Project Viewer :computer:")
 
-st.markdown('<h4><span style="color:blue">Click</span> on the chart to view my work in a language! </h4>', unsafe_allow_html=True)
+st.markdown('<h4><span style="color:blue">👇 Click</span> on the chart to view my work in a language! </h4>', unsafe_allow_html=True)
 st.markdown('<br>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
@@ -45,10 +45,17 @@ with col1:
     clicked_label = st_echarts(
     options=lang_chart, 
     height="400px",
-    events={"click": "function(params) { return params.name }"},
-)
+    events={"click": "function(params) { return params.name }"},)
+
 with col2:
+    projects_gif = st.image("images/projects.gif")
     if clicked_label:
-        for item in repository_embed[clicked_label]:
-            st.markdown(repository_embed[clicked_label][item])
+        if len(repository_embed[clicked_label]) == 0 :
+            wip_gif = st.image("images/wip.gif")
+            st.markdown("### &emsp;&emsp;&emsp;&emsp; Thinking of ideas! :smile:")
+            projects_gif.empty()
+        else:
+            for item in repository_embed[clicked_label]:
+                st.markdown(repository_embed[clicked_label][item])
+        
         
